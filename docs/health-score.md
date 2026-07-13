@@ -1,32 +1,33 @@
-# ¿Cómo sabemos si un cliente está sano?
+# Health Score
 
+## ¿Cómo sabemos si un cliente está sano?
 
-### Ponderamos el impacto de cada KPI:
+Para evaluar la salud de un cliente, ponderamos el impacto de cada KPI según su relevancia para el seguimiento diario y la evolución del negocio.
 
+### KPIs considerados
 
-KPI              |Type   | Value| Impacto | 
---------------------------------------------
-Último login     |días   |  3   | ALTO    |
-NPS              |score  | 10   | ALTO    |
-Tickets abiertos |ticket |  0   | MEDIO   |
-Usuarios activos |team   | 14   | MEDIO   | 
+| KPI | Tipo | Valor | Impacto |
+| --- | --- | ---: | --- |
+| Último login | días | 3 | Alto |
+| NPS | score | 10 | Alto |
+| Tickets abiertos | ticket | 0 | Medio |
+| Usuarios activos | team | 14 | Medio |
 
-### Ideal:
+### Condiciones ideales
 
-últimoLogin = 0 días : OK
-NPS >= 8 : OK
-ticketsAbiertos <= 2: OK
-usuariosActivos > 11 : OK
+- Último login = 0 días: OK
+- NPS >= 8: OK
+- Tickets abiertos <= 2: OK
+- Usuarios activos > 11: OK
 
+### Señales de alerta
 
+- Último login < 2 días: WARN
+- NPS <= 7: WARN
+- Tickets abiertos < 10: WARN
+- Usuarios activos < 10: WARN
 
-### Al contrario, si:
+### Nota de interpretación
 
-últimoLogin < 2 días : WARN
-NPS <= 7: WARN
-ticketsAbiertos < 10 : WARN
-usuariosActivos < 10 : WARN
-
-
-La idea es poder cubrir los principales KPIs disponibles y exprimirlos al máximo: *NPS* y *últimoLogin* son clave para entender el comportamiento diario del cliente, mientras que *ticketsAbiertos* y *usuariosActivos* son más **coyunturales** y **situacionales**. 
+La idea es cubrir los principales KPIs disponibles y aprovecharlos al máximo. *NPS* y *último login* resultan clave para entender el comportamiento diario del cliente, mientras que *tickets abiertos* y *usuarios activos* son más *coyunturales* y *situacionales*.
 
