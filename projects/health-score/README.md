@@ -27,3 +27,10 @@ This project builds a simple health scoring model that prioritizes accounts usin
 ## Target Audience
 
 Customer Success and Operations practitioners seeking hands-on experience with account prioritization automation.
+
+## Dataset Assumptions
+
+- NPS values use a 0–100 scale.
+- `DaysSinceLastLogin` represents customer engagement.
+- `RenewalDays` indicates the remaining days until renewal.
+- `ExpectedHealth` is the expected classification used to validate the scoring algorithm.
